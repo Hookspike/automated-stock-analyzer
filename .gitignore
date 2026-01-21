@@ -1,0 +1,82 @@
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+stock_data.db
+
+# Log files
+*.log
+logs/
+automated_analyzer.log
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+build/
+frontend/dist/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Documentation
+!README.md
+!DEPLOYMENT.md
+!DEPLOYMENT_GUIDE.md
+
+# Project-specific files
+*.png
+*.jpg
+*.jpeg
+# Only ignore specific JSON files, not all
+!package.json
+!package-lock.json
+!vite.config.js
+!*.config.json
+backtest_report.txt
+backtest_results.json
+prediction_test_results.txt
+
+# Model files
+best_models/
+experiment_a_results/
+model_test_results/
+optimization_results/
+*.pth
+
+# Other
+.trae/

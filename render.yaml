@@ -1,0 +1,27 @@
+# render.yaml - Render.com deployment configuration
+
+# Backend service (FastAPI)
+services:
+  - type: web
+    name: stock-analysis-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn application.app:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.8.16
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /health
+
+# Frontend service (Vue 3 + Vite)
+  - type: static_site
+    name: stock-analysis-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: NODE_VERSION
+        value: 16.17.0
+    plan: free
+    autoDeploy: true
+    pullRequestPreviewsEnabled: true
