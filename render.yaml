@@ -1,7 +1,7 @@
 # render.yaml - Render.com deployment configuration
 
-# Backend service (FastAPI)
 services:
+  # Backend service (FastAPI)
   - type: web
     name: stock-analysis-backend
     runtime: python
@@ -13,15 +13,3 @@ services:
     plan: free
     autoDeploy: true
     healthCheckPath: /health
-
-# Frontend service (Vue 3 + Vite)
-  - type: static
-    name: stock-analysis-frontend
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: NODE_VERSION
-        value: 16.17.0
-    plan: free
-    autoDeploy: true
-    pullRequestPreviewsEnabled: true
