@@ -15,7 +15,7 @@ services:
     healthCheckPath: /health
 
 # Frontend service (Vue 3 + Vite)
-  - type: static_site
+  - type: static
     name: stock-analysis-frontend
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
